@@ -47,6 +47,7 @@ class DetailViewController: UIViewController {
             scrollView.isHidden = true
         }
     }
+    
     @IBAction func readFullArticleButtonDidPress(_ sender: UIButton) {
         let webVC = SwiftModalWebVC(urlString: controller.url)
         self.present(webVC, animated: true, completion: nil)

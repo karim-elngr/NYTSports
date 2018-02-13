@@ -10,8 +10,6 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
-
     let nytTopSportsArticlesAPI: NYTTopSportsArticlesAPI = NYTTopSportsArticlesAPI()
     var sportsArticles: [SportsArticle]? {
         didSet {
@@ -21,11 +19,6 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
